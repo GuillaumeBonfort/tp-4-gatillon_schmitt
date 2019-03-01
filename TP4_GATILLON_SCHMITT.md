@@ -18,7 +18,6 @@ Welcome to the tp4-gatillon_schmitt wiki! Etudiants : GATILLON Julien, SCHMITT T
 * Pour _remplacer_ le __groupe primaire__ des utilisateurs nous rentrons la commande suivante : `sudo usermod u4 -g groupe2`. Pour _vérifier_ nous pouvons taper la commande `ls -l` dans le dossier /home pour _voir_ __le groupe propriétaire__ de chacun des users.
 
 * Pour _créer_ les __deux répertoires__ nous rentrons les commandes suivantes en se plaçant tout d'abord dans le répertoire __/home__ : `sudo mkdir groupe1` et `sudo mkdir groupe2`.
-
 Pour _mettre en place_ __les permissions__ permettat aux membres de chaque groupe d'écrire dans le dossier associé nous utilisons las commandes : `sudo chmod g+w groupe1` et `sudo chmod g+w groupe2`.
 
-* 
+* Pour _retirer_ les droits aux autres ormis le propriétaire du fichier nous tapons la commande : `sudo chmod go-rwx groupe1`.
