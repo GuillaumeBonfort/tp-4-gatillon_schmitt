@@ -67,4 +67,6 @@ Nous nous plaçons ensuite dans ce dernier dossier et nous tapons la commande : 
 
 * Pour nous _redonner_ les droits en écriture et en exécution nous tapons la commande `chmod u+wx fichier1`. Nous exécutons ensuite la commande `echo "echo Hello" > fichier`. Nous avons pu _modifier et enregistrer_ le contenu du fichier mais il nous est impossible de _lire_ son contenu car nous n'en __avons pas le droit__. 
 
+* Nous _ne pouvons pas exécuter_ le fichier. Nous avons pourtant la __permission d'exécuter mais pas celle de lire__, nous pouvons en _conclure_ qu'il est nécessaire d'avoir la __permission de lire pour exécuter__. Par contre l'exécution avec __sudo__ fonctionne normalement.
+
 * 
