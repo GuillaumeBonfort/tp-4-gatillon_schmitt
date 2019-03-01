@@ -39,15 +39,15 @@ Pour _mettre en place_ __les permissions__ permettat aux membres de chaque group
 
 * Pour _modifier_ le compte de u4 de sorte que :
 
-  1. L'expiration de l'utilisateur soit le 1er juin 2019 : `sudo usermod --expiredate 2019-06-1 u4`.`
+  * L'expiration de l'utilisateur soit le 1er juin 2019 : `sudo usermod --expiredate 2019-06-1 u4`.
 
-  2. Le mot de passe doit être changé avant 90 jours : `sudo chage -M 5 u4`.`
+  * Le mot de passe doit être changé avant 90 jours : `sudo chage -M 5 u4`.
 
-  3. Nous devons attendre 5 jours pour modifier un mot de passe : `sudo chage -m 5 u4`.
+  * Nous devons attendre 5 jours pour modifier un mot de passe : `sudo chage -m 5 u4`.
 
-  4. L'utilisateur est averti 14 jours avantl'expiration de sonmotde passe : `sudo chage -W 14 u4`.
+  * L'utilisateur est averti 14 jours avantl'expiration de sonmotde passe : `sudo chage -W 14 u4`.
 
-  5. Le comptese bloque 30 jours arèsl'expiration du mot de passe : `sudo chage -I 30 u4`.
+  * Le comptese bloque 30 jours arèsl'expiration du mot de passe : `sudo chage -I 30 u4`.
 
 
 * Pour _connaître l'interpréteur de commande (Shell)__ de l’utilisateur root nous tapons la commande : `eccho $SHELL`,qui nousdonne le résultat : __/bin/bash__ .
