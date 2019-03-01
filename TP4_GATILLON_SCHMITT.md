@@ -34,7 +34,20 @@ Pour _mettre en place_ __les permissions__ permettat aux membres de chaque group
 
 * Pour _obtenir_ le groupe qui a pour __guid = 1002__, nous tapons la commande suivante qui nous permet de trouver que c'est le __groupe 2__ : `cat /etc/group |grep ':1002:'`, cette commande recherche le string __':1002:'__ dans le fichier __/etc/group__. Nous prenons les ':' pour éviter de tomber sur un fichier ou dossier qui aurait pour nom '1002'.
 
-* Nous _pouvons le retirer_ tant que groupe2 est son __groupe secondaire__ mais _nous ne pouvons pas retirer_ u3 complètement du groupe2 car c'est le __groupe primaire__ de cet utilisateur, pour pouvoir le retirer il faut tout d'abord changer le groupe primaire de l'utilisateur.
+* Nous _pouvons le retirer_ tant que groupe2 est son __groupe secondaire__ avec la commande : `sudo gpasswd -d u3 groupe2`, mais _nous ne pouvons pas retirer_ u3 complètement du groupe2 car c'est le __groupe primaire__ de cet utilisateur, pour pouvoir le retirer il faut tout d'abord changer le groupe primaire de l'utilisateur.
 
 
+* Pour _modifier_ le compte de u4 de sorte que :
+  ** L'expiration de l'utilisateur soit le 1er juin 2019 : `sudo usermod --expiredate 2019-06-1 u4`.
+  ** Le mot de passe doit être changé avant 90 jours : `sudo chage -M 5 u4`.
+  ** Nous devons attendre 5 jours pour modifier un mot de passe : `sudo chage -m 5 u4`.
+  ** L'utilisateur est averti 14 jours avantl'expiration de sonmotde passe : `sudo chage -W 14 u4`.
+  ** Le comptese bloque 30 jours arèsl'expiration du mot de passe : `sudo chage -I 30 u4`
+
+
+* Pour _connaître l'interpréteur de commande (Shell)__ de l’utilisateur root nous tapons la commande : `eccho $SHELL`,qui nousdonne le résultat : __/bin/bash__ .
+
+* Il existe un utilisateur __qui n'a aucun fichier__ et __qui n'appartient a aucun groupe__ c'est l'utilisateur *__nobody__*.
+
+* Le mot de passe utilisateur est gardé en mémoire par la commande __sudo__ pendant __15 minutes__ par défaut. Pour _forcer_ __sudo__ à l'oublier nous pouvons taper la commande `sudo-k`.
 
