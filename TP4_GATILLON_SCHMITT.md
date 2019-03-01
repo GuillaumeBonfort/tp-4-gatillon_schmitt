@@ -1,4 +1,4 @@
-Welcome to the tp4-gatillon_schmitt wiki! Etudiants : GATILLON Julien, SCHMITT Thomas ETI
+Welcome to the tp4-gatillon_schmitt ! Etudiants : GATILLON Julien, SCHMITT Thomas ETI
 
 
 # Exercice 1. Gestion des utilisateurs et des groupes
@@ -56,3 +56,13 @@ Pour _mettre en place_ __les permissions__ permettat aux membres de chaque group
 
 * Le mot de passe utilisateur est gardé en mémoire par la commande __sudo__ pendant __15 minutes__ par défaut. Pour _forcer_ __sudo__ à l'oublier nous pouvons taper la commande `sudo-k`.
 
+
+
+# Exercice 2. Gestion des permissions
+
+* Nous nous plaçons dans le dossier __/HOME__ et nous tapons la commande `sudo mkdir test` pour créer le dossier __test__.
+Nous nous plaçons ensuite dans ce dernier dossier et nous tapons la commande : `touch fichier1` pour créer le fichier __fichier1__. Nous tapons ensuite la commande `ls -l` pour voir les droits du __fichier1__ qui sont : __rw-rw-r--__, on retourne dans le __/HOME__ et on voit les droits de __test__ : __rwxrwxr-x__ .
+
+* Pour redirer tous les droits à tout le monde nous utilisons la commande : `chmod 000 fichier1`. En utilisant la commande __sudo__ nous _pouvons tout de même le modifier et l'afficher_. Pour _conclure_ en tant que root nous avons des droits __supérieurs__ au reste, ce qui semble normal pour avoir un __contrôle__ sur le système.
+
+* 
