@@ -7,12 +7,10 @@ Welcome to the tp4-gatillon_schmitt wiki! Etudiants : GATILLON Julien, SCHMITT T
 
 * Ensuite pour _créer_ des users nous rentrons la commande suivante pour chacun des u1, u2, u3, u4 : `sudo useradd u1`.
 
-* Avec cette manière de procéder, nous avons créé des groupes dans lesquels sont nos utilisateurs. Pour _déplacer_ les utilisateurs de groupe __primaire__ nous rentrons la commande suivante : `sudo groupmod u1 -g groupe1`. 
-
 * Pour ensuite _ajouter_ un utilisateur dans un autre groupe nous rentrons la commande suivante : `sudo gpasswd -a u1 groupe1`
 
 * Pour _vérifier_ dans quel(s) groupe(s) est l'utilisateur nous pouvons taper : `groups u4`. 
 
 * Pour _afficher_ le contenu des groupes nous pouvons utiliser les différentes commandes suivantes : `cat /etc/group | grep groupe2` ou `grep -w groupe2 /etc/group`
 
-
+* Pour _déplacer_ les utilisateurs de __groupe primaire__ nous rentrons la commande suivante : `sudo usermod u4 -g groupe2`. Pour _vérifier_ nouspouvonstaper la commande `ls -l` dans le dossier /home pour voir le groupe propriétaire de chacun des users.
