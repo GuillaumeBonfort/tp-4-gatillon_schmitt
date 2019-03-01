@@ -73,4 +73,5 @@ Nous nous plaçons ensuite dans ce dernier dossier et nous tapons la commande : 
 
 * Création du fichier __nouveau__ : `touch nouveau`, création du répertoire `mkdir sstest`. Nous retirons au fichier __nouveau__ les droits en écriture : `chmod u-w nouveau`. Puis nous retirons ces mêmes droits au répertoire __test__ : `chmod u-w test`. 
 Lorsque l'on nano le fichier nouveau nous avonsun message disant que nous n'avons pas la permission d'écrire dans le fichier.
-Nous rétablissons les droits en écriture du dossier test : `chmod u+w test`. Puis nous essayons de supprimer le fichier nouveau mais le système nous demande une validation.  Retirer le droit en écriture retire la permission de supprimer des fichier du répertoire.
+Nous rétablissons les droits en écriture du dossier test : `chmod u+w test`. Puis nous essayons de supprimer le fichier nouveau mais le système nous demande une validation.  Retirer le droit en écriture enlève la permission de supprimer des fichiers du répertoire.
+
