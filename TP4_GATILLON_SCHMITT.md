@@ -69,4 +69,8 @@ Nous nous plaçons ensuite dans ce dernier dossier et nous tapons la commande : 
 
 * Nous _ne pouvons pas exécuter_ le fichier. Nous avons pourtant la __permission d'exécuter mais pas celle de lire__, nous pouvons en _conclure_ qu'il est nécessaire d'avoir la __permission de lire pour exécuter__. Par contre l'exécution avec __sudo__ fonctionne normalement.
 
-* 
+* Nous nous plaçons dans le répertoire __/test__, nous nous retirons les droits de __lire__ dans le répertoire avec la commande `sudo chmod u-r test`. Nous tapons la commande `ls -l` pour voir le contenu du répertoire mais comme nous n'avons pas le droit à la lecture nousne pouvons pas. Mais nous pouvonstout de même exécuter un fichier présent dansle répertoire car nous en avons toujours la permission. Pour rétablir les droits de lecture : `chmod u+r test`. 
+
+* Création du fichier __nouveau__ : `touch nouveau`, création du répertoire `mkdir sstest`. Nous retirons au fichier __nouveau__ les droits en écriture : `chmod u-w nouveau`. Puis nous retirons ces mêmes droits au répertoire __test__ : `chmod u-w test`. 
+Lorsque l'on nano le fichier nouveau nous avonsun message disant que nous n'avons pas la permission d'écrire dans le fichier.
+Nous rétablissons les droits en écriture du dossier test : `chmod u+w test`. Puis nous essayons de supprimer le fichier nouveau mais le système nous demande une validation.  Retirer le droit en écriture retire la permission de supprimer des fichier du répertoire.
