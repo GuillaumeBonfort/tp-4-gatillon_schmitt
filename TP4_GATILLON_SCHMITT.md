@@ -20,4 +20,21 @@ Welcome to the tp4-gatillon_schmitt wiki! Etudiants : GATILLON Julien, SCHMITT T
 * Pour _créer_ les __deux répertoires__ nous rentrons les commandes suivantes en se plaçant tout d'abord dans le répertoire __/home__ : `sudo mkdir groupe1` et `sudo mkdir groupe2`.
 Pour _mettre en place_ __les permissions__ permettat aux membres de chaque groupe d'écrire dans le dossier associé nous utilisons las commandes : `sudo chmod g+w groupe1` et `sudo chmod g+w groupe2`.
 
-* Pour _retirer_ les droits aux autres ormis le propriétaire du fichier nous tapons la commande : `sudo chmod go-rwx groupe1`.
+* Pour _retirer_ __les droits__ aux autres ormis le propriétaire du fichier nous tapons la commande : `sudo chmod go-rwx groupe1`.
+
+* Nous __ne pouvons pas nous connecter en tant que u1__, en effet lorque l'on essait on nécessite un password que nous n'avons pas.
+
+* Il faut alors faire une __manipulation__ afin de faire un __nouveau mot de passe__ à u1 : nous tapons la  commande `passwd u1` puis nous définissons un nouveau mot de passe.
+
+* Pour _accéder_ à l'__uid et le gid__ de u1 nous tapons la commande : `id u1`, l'__uid = 1001(u1)__ et le __gid = 1001(groupe1)__.
+
+* L'utilisateur qui à pour __uid = 1003__ est __u3__, pour le retrouver nous utilisons la commande : `cat /etc/passwd | grep 1003`.
+
+* L'__id__ du groupe 1 est __1001__ qui correspond à la valeur : `groups=1001(groupe1)`.
+
+* Pour _obtenir_ le groupe qui a pour __guid = 1002__, nous tapons la commande suivante qui nous permet de trouver que c'est le __groupe 2__ : `cat /etc/group |grep ':1002:'`, cette commande recherche le string __':1002:'__ dans le fichier __/etc/group__. Nous prenons les ':' pour éviter de tomber sur un fichier ou dossier qui aurait pour nom '1002'.
+
+* Nous _pouvons le retirer_ tant que groupe2 est son __groupe secondaire__ mais _nous ne pouvons pas retirer_ u3 complètement du groupe2 car c'est le __groupe primaire__ de cet utilisateur, pour pouvoir le retirer il faut tout d'abord changer le groupe primaire de l'utilisateur.
+
+
+
