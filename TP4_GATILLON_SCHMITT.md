@@ -65,4 +65,6 @@ Nous nous plaçons ensuite dans ce dernier dossier et nous tapons la commande : 
 
 * Pour redirer tous les droits à tout le monde nous utilisons la commande : `chmod 000 fichier1`. En utilisant la commande __sudo__ nous _pouvons tout de même le modifier et l'afficher_. Pour _conclure_ en tant que root nous avons des droits __supérieurs__ au reste, ce qui semble normal pour avoir un __contrôle__ sur le système.
 
+* Pour nous _redonner_ les droits en écriture et en exécution nous tapons la commande `chmod u+wx fichier1`. Nous exécutons ensuite la commande `echo "echo Hello" > fichier`. Nous avons pu _modifier et enregistrer_ le contenu du fichier mais il nous est impossible de _lire_ son contenu car nous n'en __avons pas le droit__. 
+
 * 
