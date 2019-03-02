@@ -87,11 +87,11 @@ Nous rétablissons les droits en écriture du dossier test : `chmod u+w test`. P
 
 * La commande `umask 037` équilibré permet d'autoriser l'accès complet et un accès en lecture aux membres du groupe. "rwxr-----"
 
-* |       Commande            | Droits initiaux |  Octale ou Classique   | Droits finaux |
-  |---------------------------|-----------------|------------------------|---------------|
-  | `chmod u=rx,g=wx,o=r fic` |                 | `chmod 534 fic`        |   r-x-wxr--   |
-  | `chmod uo+w,g-rx fic`     | r--r-x--- (450) | `chmod 602 fic`        |   rw-----w-   |
-  | `chmod 653 fic`           | rwx--x--x (711) | `chmod u-x,g+r,o+w fic`|   rw-r-x-wx   |
-  | `chmod u+x,g=w,o-r fic`   | r--r-x--- (450) | `chmod 520 fic`        |   r-x-w----   |
+* |       Commande            |   Octale / Classique   | Droits initiaux | Après Commande |
+  |---------------------------|------------------------|-----------------|----------------|
+  | `chmod u=rx,g=wx,o=r fic` | `chmod 534 fic`        |                 |   r-x-wxr--    |
+  | `chmod uo+w,g-rx fic`     | `chmod 602 fic`        | r--r-x--- (450) |   rw-----w-    |
+  | `chmod 653 fic`           | `chmod u-x,g+r,o+w fic`| rwx--x--x (711) |   rw-r-x-wx    |
+  | `chmod u+x,g=w,o-r fic`   | `chmod 520 fic`        | r--r-x--- (450) |   r-x-w----    |
 
 * En se plançant dans le répertoire /etc/ on effectue un `ls -l | grep` pass afin d'observer les droits du programme passwd : rwsr-xr-x. Le s correspond au StickyBit qui explique que le fichier sera éxecuté avec les droits root.
