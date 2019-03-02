@@ -89,7 +89,7 @@ Nous rétablissons les droits en écriture du dossier test : `chmod u+w test`. P
 
 * |       Commande            |   Octale / Classique   | Droits initiaux | Après Commande |
   |---------------------------|------------------------|-----------------|----------------|
-  | `chmod u=rx,g=wx,o=r fic` | `chmod 534 fic`        |                 | r-x-wxr-- (534)|
+  | `chmod u=rx,g=wx,o=r fic` | `chmod 534 fic`        | --------- (000) | r-x-wxr-- (534)|
   | `chmod uo+w,g-rx fic`     | `chmod 602 fic`        | r--r-x--- (450) | rw-----w- (602)|
   | `chmod 653 fic`           | `chmod u-x,g+r,o+w fic`| rwx--x--x (711) | rw-r-x-wx (653)|
   | `chmod u+x,g=w,o-r fic`   | `chmod 520 fic`        | r--r-x--- (450) | r-x-w---- (520)|
