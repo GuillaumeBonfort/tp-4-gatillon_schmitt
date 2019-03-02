@@ -69,9 +69,22 @@ Nous nous plaçons ensuite dans ce dernier dossier et nous tapons la commande : 
 
 * Nous _ne pouvons pas exécuter_ le fichier. Nous avons pourtant la __permission d'exécuter mais pas celle de lire__, nous pouvons en _conclure_ qu'il est nécessaire d'avoir la __permission de lire pour exécuter__. Par contre l'exécution avec __sudo__ fonctionne normalement.
 
-* Nous nous plaçons dans le répertoire __/test__, nous nous retirons les droits de __lire__ dans le répertoire avec la commande `sudo chmod u-r test`. Nous tapons la commande `ls -l` pour voir le contenu du répertoire mais comme nous n'avons pas le droit à la lecture nousne pouvons pas. Mais nous pouvonstout de même exécuter un fichier présent dansle répertoire car nous en avons toujours la permission. Pour rétablir les droits de lecture : `chmod u+r test`. 
+* Nous nous plaçons dans le répertoire __/test__, nous nous retirons les droits de __lire__ dans le répertoire avec la commande `sudo chmod u-r test`. Nous tapons la commande `ls -l` pour voir le contenu du répertoire mais comme nous n'avons pas le droit à la lecture nousne pouvons pas. Mais nous pouvonstout de même exécuter un ficchmhier présent dansle répertoire car nous en avons toujours la permission. Pour rétablir les droits de lecture : `chmod u+r test`. 
 
-* Création du fichier __nouveau__ : `touch nouveau`, création du répertoire `mkdir sstest`. Nous retirons au fichier __nouveau__ les droits en écriture : `chmod u-w nouveau`. Puis nous retirons ces mêmes droits au répertoire __test__ : `chmod u-w test`. 
+* Création du fichier __nouveau__ : `touch nouveau`, création du répertoire `sudo mkdir sstest`. Nous retirons au fichier __nouveau__ les droits en écriture : `sudo chmod u-w nouveau`. Puis nous retirons ces mêmes droits au répertoire __test__ : `sudo chmod u-w test`. 
 Lorsque l'on nano le fichier nouveau nous avonsun message disant que nous n'avons pas la permission d'écrire dans le fichier.
 Nous rétablissons les droits en écriture du dossier test : `chmod u+w test`. Puis nous essayons de supprimer le fichier nouveau mais le système nous demande une validation.  Retirer le droit en écriture enlève la permission de supprimer des fichiers du répertoire.
+ 
+* En se placant dans le répertoire personnel, nous utilions la commande suivante : `sudo chmod u-x test` afin de retirer le droit en exécution du répertoire __test__ . Nous pouvons ainsi plus nous déplacer ni lister le contenu de ce répertoire. Le droit en éxecution d'un répertoire permet donc d'accéder aux fichiers présent dans ce répertoire mais aussi de les modifiers/créer/supprimer.
 
+* On rétablit les droits en éxécution à l'aide de la commande suivante : `sudo chmod u+x test` , ensuite après s'être placé dans le répertoire __test__ on retire les droits en éxécution `sudo chmod u+x ../test`, on remarque que la non plus nous ne pouvons ni modifier ni supprimer ni créer des fichiers. En revanche la commande `cd ../` permet de revenir au répertoire précédant. Cela peut s'expliquer car celle - ci ne semble pas affecter par la modification de permissions.
+
+* A l'aide de la commande `sudo chmod g=r fichier1` on donne au groupe du fichier les droits en lecture seulement. On a donc les droits pour le groupe "r--"
+
+* La commande `umask 077` très restrictif interdit (à part nous) le droit en lecture ou en écriture et éxécution (traversée de répertoires). "rw-------"
+
+* La commande `umask 022` très permissif permet à tout le monde de lire les fichiers et traverser le répertoire en autorisant que nous à l'écriture. "rwxrw-rw-"
+
+* La commande `umask 037` équilibré permet d'autoriser l'accès complet et un accès en lecture aux membres du groupe. "rwxr-----"
+
+*
